@@ -11,28 +11,39 @@ st.markdown("""
 div[role="alert"] * { color: white !important; }
 .stat-box {
     background: linear-gradient(135deg, #185FA5, #0D2137);
-    padding: 20px;
+    padding: 15px 10px;
     border-radius: 10px;
     text-align: center;
     border: 1px solid #185FA5;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .stat-number {
-    font-size: 32px;
+    font-size: 26px;
     font-weight: bold;
     color: #FFD580;
+    line-height: 1.2;
 }
 .stat-label {
-    font-size: 13px;
+    font-size: 11px;
     color: #B8D4EE;
-    margin-top: 4px;
+    margin-top: 6px;
+    line-height: 1.3;
 }
 .module-box {
     background: #1A3050;
-    padding: 25px;
+    padding: 20px 15px;
     border-radius: 10px;
     text-align: center;
     border: 1px solid #185FA5;
-    min-height: 120px;
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -43,8 +54,8 @@ st.subheader("AI-Powered Detection and Prevention of Digital Arrest Scams")
 st.markdown("*ET AI Hackathon 2.0 | Problem #6 | Team: Shivani & Sreejani*")
 st.markdown("---")
 
-# Live Statistics Banner
-st.markdown("### 📊 India Cybercrime — Live Statistics")
+# Statistics Banner
+st.markdown("### 📊 India Cybercrime — Key Statistics")
 col1, col2, col3, col4, col5 = st.columns(5)
 
 with col1:
@@ -58,7 +69,7 @@ with col1:
 with col2:
     st.markdown("""
     <div class="stat-box">
-        <div class="stat-number">₹1,776 Cr</div>
+        <div class="stat-number">₹1,776Cr</div>
         <div class="stat-label">Lost to Digital Arrest scams</div>
     </div>
     """, unsafe_allow_html=True)
@@ -96,36 +107,36 @@ col1, col2, col3, col4 = st.columns(4)
 with col1:
     st.markdown("""
     <div class="module-box">
-        <h3 style="color:white; font-size:16px;">🚨 Module 1</h3>
-        <p style="color:white; font-size:14px;">Scam Message Detector</p>
-        <p style="color:#B8D4EE; font-size:12px;">DistilBERT AI — detects SMS, WhatsApp & email scams</p>
+        <h3 style="color:white; font-size:15px; margin:0;">🚨 Module 1</h3>
+        <p style="color:white; font-size:13px; margin:6px 0;">Scam Message Detector</p>
+        <p style="color:#B8D4EE; font-size:11px; margin:0;">DistilBERT AI — detects SMS, WhatsApp & email scams</p>
     </div>
     """, unsafe_allow_html=True)
 
 with col2:
     st.markdown("""
     <div class="module-box">
-        <h3 style="color:white; font-size:16px;">🔒 Module 2</h3>
-        <p style="color:white; font-size:14px;">Digital Arrest Detector</p>
-        <p style="color:#B8D4EE; font-size:12px;">AI pattern analysis — detects digital arrest scam scripts</p>
+        <h3 style="color:white; font-size:15px; margin:0;">🔒 Module 2</h3>
+        <p style="color:white; font-size:13px; margin:6px 0;">Digital Arrest Detector</p>
+        <p style="color:#B8D4EE; font-size:11px; margin:0;">AI pattern analysis — detects digital arrest scam scripts</p>
     </div>
     """, unsafe_allow_html=True)
 
 with col3:
     st.markdown("""
     <div class="module-box">
-        <h3 style="color:white; font-size:16px;">🤖 Module 3</h3>
-        <p style="color:white; font-size:14px;">Fraud Awareness Chatbot</p>
-        <p style="color:#B8D4EE; font-size:12px;">AI assistant — answers all fraud awareness questions</p>
+        <h3 style="color:white; font-size:15px; margin:0;">🤖 Module 3</h3>
+        <p style="color:white; font-size:13px; margin:6px 0;">Fraud Awareness Chatbot</p>
+        <p style="color:#B8D4EE; font-size:11px; margin:0;">AI assistant — answers all fraud awareness questions</p>
     </div>
     """, unsafe_allow_html=True)
 
 with col4:
     st.markdown("""
     <div class="module-box">
-        <h3 style="color:white; font-size:16px;">📊 Module 4</h3>
-        <p style="color:white; font-size:14px;">Fraud Intelligence Dashboard</p>
-        <p style="color:#B8D4EE; font-size:12px;">NCRB data — India cybercrime trends & hotspots</p>
+        <h3 style="color:white; font-size:15px; margin:0;">📊 Module 4</h3>
+        <p style="color:white; font-size:13px; margin:6px 0;">Fraud Intelligence Dashboard</p>
+        <p style="color:#B8D4EE; font-size:11px; margin:0;">NCRB data — India cybercrime trends & hotspots</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -133,6 +144,8 @@ st.markdown("---")
 
 # Alert Banner
 st.error("🚨 **ALERT:** Digital Arrest is NOT a legal concept in India. Real CBI/Police NEVER demand money over video call. If you receive such a call — **HANG UP and call 1930 immediately!**")
+
+st.markdown("---")
 
 # How to use
 st.markdown("### 👈 How to use SafeShield AI")
