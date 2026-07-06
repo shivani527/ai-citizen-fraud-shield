@@ -1,3 +1,4 @@
+import streamlit as st
 from transformers import pipeline
 import os
 
@@ -11,15 +12,17 @@ SCAM_KEYWORDS = [
 
 _classifier = None
 
+@st.cache_resource
 def load_classifier():
     global _classifier
     if _classifier is None:
         model_path = 'models/scam_model'
         if os.path.exists(model_path):
+            print("Loading trained DistilBERT model...")
             _classifier = pipeline('text-classification',
                 model=model_path, tokenizer=model_path)
         else:
-            # Use base model until training is done
+            print("Trained model not found! Using base model...")
             _classifier = pipeline('text-classification',
                 model='distilbert-base-uncased-finetuned-sst-2-english')
     return _classifier
@@ -27,21 +30,20 @@ def load_classifier():
 def detect_scam(text: str) -> dict:
     clf = load_classifier()
     result = clf(text[:512])[0]
-    is_scam = result['label'] == 'LABEL_1' or result['label'] == 'POSITIVE'
+    is_scam = result['label'] == 'LABEL_1'
     confidence = round(result['score'] * 100, 1)
     red_flags = [kw for kw in SCAM_KEYWORDS if kw.lower() in text.lower()]
-    
-    # Override with keyword detection if keywords found
+
     if len(red_flags) >= 2:
         is_scam = True
-        confidence = max(confidence, 85.0)
-    
+        confidence = max(confidence, 88.0)
+
     risk = 'HIGH' if confidence > 85 else 'MEDIUM' if confidence > 60 else 'LOW'
-    
+
     return {
-        'is_scam': is_scam,
-        'label': 'SCAM' if is_scam else 'SAFE',
+        'is_scam':    is_scam,
+        'label':      'SCAM' if is_scam else 'SAFE',
         'confidence': confidence,
         'risk_level': risk if is_scam else 'SAFE',
-        'red_flags': red_flags
+        'red_flags':  red_flags
     }
