@@ -148,15 +148,33 @@ st.error("🚨 **ALERT:** Digital Arrest is NOT a legal concept in India. Real C
 st.markdown("---")
 
 # How to use
+# How to use
 st.markdown("### 👈 How to use SafeShield AI")
 c1, c2, c3 = st.columns(3)
 with c1:
-    st.info("**Step 1**\n\nPaste any suspicious message in Scam Detector")
+    st.markdown("""
+    <div style="background:#1A3050; padding:20px; border-radius:10px;
+    border:1px solid #185FA5; min-height:100px; text-align:center;">
+        <p style="color:#FFD580; font-weight:bold; font-size:14px;">Step 1</p>
+        <p style="color:white; font-size:13px;">Paste suspicious message in Scam Detector</p>
+    </div>
+    """, unsafe_allow_html=True)
 with c2:
-    st.info("**Step 2**\n\nGet instant AI analysis with risk score and red flags")
+    st.markdown("""
+    <div style="background:#1A3050; padding:20px; border-radius:10px;
+    border:1px solid #185FA5; min-height:100px; text-align:center;">
+        <p style="color:#FFD580; font-weight:bold; font-size:14px;">Step 2</p>
+        <p style="color:white; font-size:13px;">Get instant AI analysis with risk score</p>
+    </div>
+    """, unsafe_allow_html=True)
 with c3:
-    
-    st.info("**Step 3**\n\n\nCall **1930** to report if scam is detected")
+    st.markdown("""
+    <div style="background:#1A3050; padding:20px; border-radius:10px;
+    border:1px solid #185FA5; min-height:100px; text-align:center;">
+        <p style="color:#FFD580; font-weight:bold; font-size:14px;">Step 3</p>
+        <p style="color:white; font-size:13px;">Call 1930 to report if scam detected</p>
+    </div>
+    """, unsafe_allow_html=True)
 
 st.markdown("---")
 st.markdown("📞 **Cybercrime Helpline: 1930** | 🌐 **cybercrime.gov.in** | *Data Source: NCRB, MHA India*")
