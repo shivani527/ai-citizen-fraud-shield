@@ -155,7 +155,8 @@ with c1:
 with c2:
     st.info("**Step 2**\n\nGet instant AI analysis with risk score and red flags")
 with c3:
-    st.info("**Step 3**\n\nReport to 1930 if scam detected")
+    
+    st.info("**Step 3**\n\nCall **1930** to report if scam is detected")
 
 st.markdown("---")
 st.markdown("📞 **Cybercrime Helpline: 1930** | 🌐 **cybercrime.gov.in** | *Data Source: NCRB, MHA India*")
